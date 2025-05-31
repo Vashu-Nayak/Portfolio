@@ -15,15 +15,15 @@ const container = (delay) => ({
 const iconVariants = (duration) => ({
   initial: { y: -10 },
   animate: {
-      y: [10, -10],
-      transition: {
-          duration: duration,
-          ease: "linear",
-          repeat: Infinity,
-          repeatType: "reverse",
-          delay: 0.5
+    y: [10, -10],
+    transition: {
+      duration: duration,
+      ease: "linear",
+      repeat: Infinity,
+      repeatType: "reverse",
+      delay: 0.5
 
-      }
+    }
   }
 })
 
@@ -47,7 +47,7 @@ const Hero = () => {
               animate="visible"
               className=" bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-3xl tracking-tight text-transparent"
             >
-              Frontend Developer
+              FullStack Developer
             </motion.span>
             <motion.p
               variants={container(1)}
@@ -57,18 +57,28 @@ const Hero = () => {
             >
               {HERO_CONTENT}
             </motion.p>
+            <motion.a
+            variants={container(1.5)}
+            initial="hidden"
+            animate="visible"
+            href='https://storage.googleapis.com/acciojob-user-content/resumes/b6752f49-1fb0-4f5c-8b55-a3546de038f5-VashufullstackResume.pdf'
+            target='_blank'
+            rel='noopener noreferrer'
+            download
+            className='bg-white rounded-full p-4 text-sm text-stone-800 mb-10'
+          >Download Resume</motion.a>
           </div>
         </div>
         <div className=" w-full lg:w-1/2 lg:p-8">
-          <motion.div 
-          variants={iconVariants(2)}
-          initial="initial"
-          animate="animate"
-          className=" flex justify-center ">
+          <motion.div
+            variants={iconVariants(2)}
+            initial="initial"
+            animate="animate"
+            className=" flex justify-center ">
             <motion.img initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transtion={{ duration: 1, delay: 1.2 }}
-              src={profilePic} 
+              src={profilePic}
               alt="Vashu Nayak"
               className='rounded-2xl'
             />
